@@ -1,0 +1,13 @@
+<h1><%= @neighborhood.name %></h1>
+<br>
+City: <%= link_to @neighborhood.city.name, @neighborhood.city %>
+
+<br>
+All Listings:
+<ul>
+	<% @neighborhood.listings.each do |listing| %>
+		<li><%= link_to listing.title, listing %></li>
+	<% end %>
+</ul>
+
+

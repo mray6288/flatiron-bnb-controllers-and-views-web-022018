@@ -1,0 +1,22 @@
+<h1><%= @user.name %></h1>
+<br>
+<% if @user.is_host? %>
+	Listings:
+	<ul>
+		<% @user.listings.each do |listing| %>
+			<li><%= link_to listing.title, listing %></li>
+		<% end %>
+	</ul>
+	<br>
+<% end %>
+User Reviews:
+<ul>
+	<% @user.reviews.each do |review| %>
+	<li><ul>
+		<li><%= link_to review.reservation.listing.title, review.reservation.listing %></li>
+		<li><%= review.description %></li>
+	</ul></li>
+	<% end %>
+</ul>
+
+

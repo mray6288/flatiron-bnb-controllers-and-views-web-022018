@@ -1,0 +1,7 @@
+<h1>All Listings</h1>
+
+<ul>
+<% @listings.each do |listing| %>
+	<li><%= link_to "#{listing.neighborhood.city.name} - #{listing.neighborhood.name} -  #{listing.title}", listing %></li>
+<% end %>
+</ul>

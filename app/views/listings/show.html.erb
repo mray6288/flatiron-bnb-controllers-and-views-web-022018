@@ -1,0 +1,28 @@
+<h1><%= @listing.title %></h1>
+<br>
+City: <%= link_to @listing.neighborhood.city.name, @listing.neighborhood.city %>
+<br>
+Neighborhood: <%= link_to @listing.neighborhood.name, @listing.neighborhood %>
+
+<br>
+Address: <%= @listing.address %>
+<br>
+Listing Type: <%= @listing.listing_type %>
+<br>
+Price: <%= @listing.price %>
+<br>
+Description: <%= @listing.description %>
+<br>
+Host: <%= link_to @listing.host.name, @listing.host %>
+<br>
+Reviews: 
+<br>
+<% @listing.reviews.each do |review| %>
+	<%= link_to review.guest.name, review.guest %>
+	<%= review.description %>
+	Rating: <%= review.rating %>
+<% end %>
+
+
+
+

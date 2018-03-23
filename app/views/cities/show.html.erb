@@ -1,0 +1,17 @@
+<h1><%= @city.name %></h1>
+<br>
+Neighborhoods:
+<ul>
+	<% @city.neighborhoods.each do |n| %>
+		<li><%= link_to n.name, n %> - <%= pluralize(n.listings.count, 'listing') %></li>
+	<% end %>
+</ul>
+<br>
+All Listings (<%= @city.listings.count %> total):
+<ul>
+	<% @city.listings.each do |listing| %>
+		<li><%= link_to listing.title, listing %></li>
+	<% end %>
+</ul>
+
+
